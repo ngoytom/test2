@@ -5,7 +5,7 @@ import { FieldButton } from "./Button";
 import { Calendar } from "./Calendar";
 import { DateField } from "./DateField";
 import { Popover } from "./Popover";
-import { CalendarIcon, ExclamationIcon } from "@heroicons/react/outline";
+import { CalendarIcon, ExclamationIcon } from "@heroicons/react/24/solid";
 
 export function DatePicker(props) {
   let state = useDatePickerState(props);
@@ -16,7 +16,7 @@ export function DatePicker(props) {
     fieldProps,
     buttonProps,
     dialogProps,
-    calendarProps
+    calendarProps,
   } = useDatePicker(props, state, ref);
 
   return (
@@ -27,9 +27,6 @@ export function DatePicker(props) {
       <div {...groupProps} ref={ref} className="flex group">
         <div className="bg-white border border-gray-300 group-hover:border-gray-400 transition-colors rounded-l-md pr-10 group-focus-within:border-violet-600 group-focus-within:group-hover:border-violet-600 p-1 relative flex items-center">
           <DateField {...fieldProps} />
-          {state.validationState === "invalid" && (
-            <ExclamationIcon className="w-6 h-6 text-red-500 absolute right-1" />
-          )}
         </div>
         <FieldButton {...buttonProps} isPressed={state.isOpen}>
           <CalendarIcon className="w-5 h-5 text-gray-700 group-focus-within:text-violet-700" />

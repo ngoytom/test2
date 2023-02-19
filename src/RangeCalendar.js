@@ -5,23 +5,19 @@ import { useLocale } from "@react-aria/i18n";
 import { createCalendar } from "@internationalized/date";
 import { CalendarButton } from "./Button";
 import { CalendarGrid } from "./CalendarGrid";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 
 export function RangeCalendar(props) {
   let { locale } = useLocale();
   let state = useRangeCalendarState({
     ...props,
     locale,
-    createCalendar
+    createCalendar,
   });
 
   let ref = useRef();
-  let {
-    calendarProps,
-    prevButtonProps,
-    nextButtonProps,
-    title
-  } = useRangeCalendar(props, state, ref);
+  let { calendarProps, prevButtonProps, nextButtonProps, title } =
+    useRangeCalendar(props, state, ref);
 
   return (
     <div {...calendarProps} ref={ref} className="inline-block">

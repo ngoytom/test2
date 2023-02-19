@@ -5,7 +5,7 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
-    "@heroicons/react": "1.0.6",
+    "@heroicons/react": "^2.0.16",
     "@internationalized/date": "3.0.0",
     "@react-aria/button": "3.5.0",
     "@react-aria/calendar": "3.0.0",
